@@ -1,0 +1,60 @@
+.clock {
+    width: 201px;
+    height: 201px;
+    border-radius: 100%;
+    border: solid 1px #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.hours,
+.minutes,
+.seconds {
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    width: 1px;
+}
+.hours {
+    height: 65px;
+    border: solid 2px #000;
+    margin-left: -2px;
+    margin-bottom: -4px;
+    background: #000;
+    -webkit-transform-origin: 2.5px 65px;
+            transform-origin: 2.5px 65px;
+}
+.minutes {
+    height: 80px;
+    border: solid 1px #aaa;
+    margin-left: -1px;
+    margin-bottom: -5px;
+    background: #aaa;
+    -webkit-transform-origin: 1.5px 76px;
+            transform-origin: 1.5px 76px;
+}
+.seconds {
+    height: 95px;
+    background: red;
+    margin-bottom: -7px;
+    -webkit-transform-origin: 0.5px 88px;
+            transform-origin: 0.5px 88px;
+}
+
+.label {
+    position: absolute;
+    font-family: sans-serif;
+    width: 100%;
+    top: 120px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+
+html, body {
+    padding: 0;
+}  
+.content-to-scroll {
+    height: 44000px;
+}
