@@ -1,30 +1,20 @@
-import Kefir from 'kefir';
+import Kefir from 'node_modules/kefir';
 
 // Variables for HTML elements:
 const click_btn = document.getElementById('click');
 const count_display = document.getElementById('count-display');
 const reset_btn = document.getElementById('reset');
 
+// Listeners for the events we want to capture:
+const button_click_s = Kefir.fromEvents(click_btn, 'click');
 
-// TO CREATE A STREAM: 
-
-// It will begin with the click interaction made by the user:
-const button_clicks = Kefir.fromEvents(click_btn, 'click');
+const reset_click_s = Kefir.fromEvents(reset_btn, 'click');
 
 // We need to count the amount of clicks:
+const count_s = button_click_s.scan(sum => sum + 1, 0);
 
-const clicks_count = button_clicks.scan(sum => sum + 1, 0);
-//Quick note: the '.scan' method from Kefir was used because
-//it keeps kind of an "internal state" to store the count amount
+console.log(count_s);
 
-// Now to show the count correctly, we need to subscribe for changes of the clicks count value:
-clicks_count
-    .onValue ((x) => {
-        count_display.innerText = x;
-    })
-    .onError( (err) => {
-        count_display.innerText = err;
-    });
+// 
 
-
-export { click_btn, count_display, reset_btn, clicks_count };
+export { click_btn, count_display, reset_btn };

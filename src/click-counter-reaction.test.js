@@ -1,7 +1,7 @@
 import _sinon from 'sinon';
 import test from 'tape';
 
-import { click_btn, count_display, reset_btn } from './click-counter-reaction';
+import { click_btn, count_display, reset_btn } from './click-counter-reaction.js';
 
 test('test click counter reaction', (t) => {
 
